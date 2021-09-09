@@ -62,7 +62,7 @@
           console.log(inputName)
 
 
-          fetch("http://localhost:3000/collection/Clients/" + inputName).then(function (
+          fetch("https://ebloffices.herokuapp.com/collection/Clients" + inputName).then(function (
               response
             ) {
               response.json().then(function (json) {
@@ -75,7 +75,7 @@
 
             console.log(ID)
 
-            fetch("http://localhost:3000/collection/Clients/" + ID, {
+            fetch("https://ebloffices.herokuapp.com/collection/Clients" + ID, {
               method: 'delete'
             })
               .then(res => res.json())

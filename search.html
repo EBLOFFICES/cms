@@ -78,7 +78,7 @@
 
             let inputName = document.getElementById("pwd").value;
 
-            fetch("http://localhost:3000/collection/Clients/" + inputName).then(function (
+            fetch("https://ebloffices.herokuapp.com/collection/Clients" + inputName).then(function (
               response
             ) {
               response.json().then(function (json) {
