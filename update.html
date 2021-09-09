@@ -194,7 +194,7 @@
 
           let inputName = document.getElementById("input-name").value;
 
-          fetch("http://localhost:3000/collection/Clients/" + inputName).then(function (
+          fetch("https://ebloffices.herokuapp.com/collection/Clients" + inputName).then(function (
             response
           ) {
             response.json().then(function (json) {
@@ -293,7 +293,7 @@
             Comments: Comments
           };
 
-          fetch("http://localhost:3000/collection/Clients/" + id, {
+          fetch("https://ebloffices.herokuapp.com/collection/Clients" + id, {
             method: "PUT", // set the HTTP method as 'PUT'
             headers: {
               "Content-Type": "application/json", // set the data type as JSON
