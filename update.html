@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Authentication</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <img src="img/ebl-logo.png" alt="EBL-Logo" height="100" width="100">
+          </div>
+          <ul id="navbar" class="nav navbar-nav">
+            <li class="active"><a href="#">Logout</a></li>
+            <li><a href="recordslist.html">Records List</a></li>
+            <li><a href="add.html">Add Record</a></li>
+            <li><a href="update.html">Update Record</a></li>
+            <li><a href="search.html">Search Record</a></li>
+            <li><a href="delete.html">Delete Record</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="space"></div>
+        
+      <div class="container">
+        <h2>Update Record</h2>
+        <br>
+        <div class="form-group">
+            <p><label class="control-label col-sm-2" for="name">Name or ID:</label></p><br>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="input-name" placeholder="Enter Name" name="Name">
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default" onclick="getDetails()">Get Full Details</button>
+              <br>
+              <p id="add-result"></p>
+            </div>
+          </div>
+        <div id="space2"></div>
+        <div class="form-horizontal">
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="id">ID:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="ID" placeholder="Enter ID" name="ID">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="name">Name:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" placeholder="Enter Name" name="Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="phone-number">Phone Number:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="phone-number" placeholder="Enter phonenumber" name="phone-number">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Email">Email:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Email" placeholder="Enter Email" name="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="date">Date:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Date" placeholder="Enter Date" name="Date">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="date">Address:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Address" placeholder="Enter Address" name="Address">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Development Name">Development Name:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="DevelopmentName" placeholder="Enter Development Name" name="DevelopmentName">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="CNIC Number">Person CNIC Number:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="CNICNumber" placeholder="Enter CNIC Number" name="CNIC Number">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Next to kin">Next to kin:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Nexttokin" placeholder="Enter Next to kin" name="Next to kin">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Next to kin address">Next to kin address:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Nexttokinaddress" placeholder="Enter Next to kin address" name="Next to kin address">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Plot Size">Plot Size:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="PlotSize" placeholder="Plot Size" name="Plot Size">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Amount">Amount:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Amount" placeholder="Amount" name="Amount">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Installment">Installment:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Installment" placeholder="Installment" name="Installment">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Next Installment Date">Next Installment Date:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="NextInstallmentDate" placeholder="Next Installment Date" name="Next Installment Date">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="After 6 months Installment">After 6 months Installment:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="After6monthsInstallment" placeholder="After 6 months Installment" name="After 6 months Installment">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="After 6 months Date">After 6 months Date:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="After6monthsDate" placeholder="After 6 months Date" name="After 6 months Date">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="After 6 months Date">CNIC Copy:</label></p>
+            <div class="col-sm-10">
+                <input type="file" id="myFile" name="filename">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Solicitors Details" placeholder="Enter Solicitors Details">Solicitors Details:</label></p>
+            <div class="col-sm-10">
+                <textarea id="SolicitorsDetails" name="SolicitorsDetails" rows="4" cols="50"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Lender Name">Lender Name:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="LenderName" placeholder="Lender Name" name="Lender Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Aip agreed or not">AIP agreed or not:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Aipagreedornot" placeholder="AIP agreed or not" name="AIP agreed or not">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Comments" placeholder="Enter Comments">Comments:</label></p>
+            <div class="col-sm-10">
+                <textarea id="Comments" name="Comments" rows="4" cols="50"></textarea>
+            </div>
+          </div>
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default" onclick="updateDetails()">Update</button>
+              <br>
+              <p id="add-result"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="bottom"></div>
+
+      <script>
+        
+        function getDetails() {
+
+          let inputName = document.getElementById("input-name").value;
+
+          fetch("http://localhost:3000/collection/Clients/" + inputName).then(function (
+            response
+          ) {
+            response.json().then(function (json) {
+              console.log(json);
+              document.getElementById("ID").value = json._id;
+              document.getElementById('name').value = json.Name;
+              document.getElementById('phone-number').value = json.Phone;
+              document.getElementById('Email').value = json.Email;
+              document.getElementById('Date').value = json.Date;
+              document.getElementById('Address').value = json.Address;
+              document.getElementById('DevelopmentName').value = json.DevelopmentName;
+              document.getElementById('CNICNumber').value = json.CNICNumber;
+              document.getElementById('Nexttokin').value = json.Nexttokin;
+              document.getElementById('Nexttokinaddress').value = json.Nexttokinaddress;
+              document.getElementById('PlotSize').value = json.PlotSize;
+              document.getElementById('Amount').value = json.Amount;
+              document.getElementById('Installment').value = json.Installment;
+              document.getElementById('NextInstallmentDate').value = json.NextInstallmentDate;
+              document.getElementById('After6monthsInstallment').value = json.After6monthsInstallment;
+              document.getElementById('After6monthsDate').value = json.After6monthsDate;
+              document.getElementsByName('filename').value = json.CNICCopy;
+              document.getElementById('SolicitorsDetails').value = json.SolicitorsDetails;
+              document.getElementById('LenderName').value = json.LenderName;
+              document.getElementById('Aipagreedornot').value = json.Aipagreedornot;
+              document.getElementById('Comments').value = json.Comments;
+            });
+          });
+        }
+
+        function updateDetails() {
+          let id = document.getElementById("ID").value;
+          let name = document.getElementById("name").value;
+          let phone = document.getElementById("phone-number").value;
+          let Email = document.getElementById("Email").value;
+          let Date = document.getElementById("Date").value;
+          let Address = document.getElementById("Address").value;
+          let DevelopmentName = document.getElementById("DevelopmentName").value;
+          let CNICNumber = document.getElementById("CNICNumber").value;
+          let Nexttokin = document.getElementById("Nexttokin").value;
+          let Nexttokinaddress = document.getElementById("Nexttokinaddress").value;
+          let PlotSize = document.getElementById("PlotSize").value;
+          let Amount = document.getElementById("Amount").value;
+          let Installment = document.getElementById("Installment").value;
+          let NextInstallmentDate = document.getElementById("NextInstallmentDate").value;
+          let After6monthsInstallment = document.getElementById("After6monthsInstallment").value;
+          let After6monthsDate = document.getElementById("After6monthsDate").value;
+          let CNICCopy = document.getElementsByName("filename").value;
+          let SolicitorsDetails = document.getElementById("SolicitorsDetails").value;
+          let LenderName = document.getElementById("LenderName").value;
+          let Aipagreedornot = document.getElementById("Aipagreedornot").value;
+          let Comments = document.getElementById("Comments").value;
+
+          console.log(id);
+          console.log(name);
+          console.log(phone);
+          console.log(Email);
+          console.log(Date);
+          console.log(Address);
+          console.log(DevelopmentName);
+          console.log(CNICNumber);
+          console.log(Nexttokin);
+          console.log(Nexttokinaddress);
+          console.log(PlotSize);
+          console.log(Amount);
+          console.log(Installment);
+          console.log(NextInstallmentDate);
+          console.log(After6monthsInstallment);
+          console.log(After6monthsDate);
+          console.log(CNICCopy);
+          console.log(SolicitorsDetails);
+          console.log(LenderName);
+          console.log(Aipagreedornot);
+          console.log(Comments);
+
+          let updateClientDetails = {
+            ID: id,
+            Name: name,
+            Phone: phone,
+            Email: Email,
+            Date: Date,
+            Address: Address,
+            DevelopmentName: DevelopmentName,
+            CNICNumber: CNICNumber,
+            Nexttokin: Nexttokin,
+            Nexttokinaddress: Nexttokinaddress,
+            PlotSize: PlotSize,
+            Amount: Amount,
+            Installment: Installment,
+            NextInstallmentDate: NextInstallmentDate,
+            After6monthsInstallment: After6monthsInstallment,
+            After6monthsDate: After6monthsDate,
+            CNICCopy: CNICCopy,
+            SolicitorsDetails: SolicitorsDetails,
+            LenderName: LenderName,
+            Aipagreedornot: Aipagreedornot,
+            Comments: Comments
+          };
+
+          fetch("http://localhost:3000/collection/Clients/" + id, {
+            method: "PUT", // set the HTTP method as 'PUT'
+            headers: {
+              "Content-Type": "application/json", // set the data type as JSON
+            },
+            body: JSON.stringify(updateClientDetails), // need to stringify the JSON object
+          });
+        }
+
+      </script>
+
+</body>
+</html>

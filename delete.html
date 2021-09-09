@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Authentication</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <img src="img/ebl-logo.png" alt="EBL-Logo" height="100" width="100">
+          </div>
+          <ul id="navbar" class="nav navbar-nav">
+            <li class="active"><a href="#">Logout</a></li>
+            <li><a href="recordslist.html">Records List</a></li>
+            <li><a href="add.html">Add Record</a></li>
+            <li><a href="update.html">Update Record</a></li>
+            <li><a href="search.html">Search Record</a></li>
+            <li><a href="delete.html">Delete Record</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="space"></div>
+        
+      <div class="container">
+        <h2>Delete</h2>
+        <div class="form-horizontal">
+            <div class="form-group">
+          <p><label class="control-label col-sm-2" for="name">Input Name:</label></p>
+              <div class="col-sm-10">          
+                <input type="name" class="form-control" id="input-name" placeholder="Enter Name" name="pwd">
+              </div>
+            </div>
+            <div class="form-group">        
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" onclick="remove()">Delete</button>
+              </div>
+            </div>
+            <div class="form-group">
+                <p><label class="control-label col-sm-2" for="pwd">Result:</label></p>
+                <div class="col-sm-10">          
+                      <p id="result"></p>
+                </div>
+        </div>
+      </div>
+      </div>
+
+      <script>
+
+        function remove() {
+
+          let inputName = document.getElementById("input-name").value;
+
+          console.log(inputName)
+
+
+          fetch("http://localhost:3000/collection/Clients/" + inputName).then(function (
+              response
+            ) {
+              response.json().then(function (json) {
+                let id = json._id;
+                localStorage.setItem("id", id);
+              });
+            });
+            
+            let ID = localStorage.getItem("id");
+
+            console.log(ID)
+
+            fetch("http://localhost:3000/collection/Clients/" + ID, {
+              method: 'delete'
+            })
+              .then(res => res.json())
+              .then(data => {
+                // Do some stuff...
+              })
+              .catch(err => console.log(err));
+
+        }
+        
+      </script>
+
+</body>
+</html>

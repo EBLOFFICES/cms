@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Authentication</title>
+</head>
+<body onload="getDetails(),table()">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <img src="img/ebl-logo.png" alt="EBL-Logo" height="100" width="100">
+          </div>
+          <ul id="navbar" class="nav navbar-nav">
+            <li class="active"><a href="#">Logout</a></li>
+            <li><a href="recordslist.html">Records List</a></li>
+            <li><a href="add.html">Add Record</a></li>
+            <li><a href="update.html">Update Record</a></li>
+            <li><a href="search.html">Search Record</a></li>
+            <li><a href="delete.html">Delete Record</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="space"></div>
+        
+      <div class="record-container">
+        <h2>Records</h2><br><br>
+
+        <div id="recordslist"></div>
+
+      </div>
+
+      <script>
+        function loadDetails() {
+          
+          if (localStorage.getItem("ClientsDetails") == undefined) {
+            return [];
+          } else {
+            return JSON.parse(localStorage.getItem("ClientsDetails"));
+          }
+
+        }
+
+        function table() {
+          let details = loadDetails();
+          console.log(details);
+
+          let t = "<table><tr><th>Name</th><th>Phone</th><th>Email</th><th>Date</th><th>Address</th><th>Development Name</th><th>CNIC Number</th><th>Next To Kin</th><th>Next to Kin Address</th><th>Plot size</th><th>Amount</th><th>Installment</th><th>Next Installment Date</th><th>After 6 months Installment</th><th>After 6 months installment date</th><th>CNIC Copy</th><th>Solicitors Details</th><th>Lenders Name</th><th>AIP Agreed or Not</th><th>Comments</th>";
+            
+          for(let i=0; i<details.length; i++) {
+            t += "<tr><td>" + details[i].Name + "</td><td>" + details[i].Phone + "</td><td>" + details[i].Email + "</td><td>" + details[i].Date + "</td><td>" + details[i].Address + "</td><td>" + details[i].DevelopmentName + "</td><td>" + details[i].CNICNumber + "</td><td>" + details[i].Nexttokin + "</td><td>" + details[i].Nexttokinaddress + "</td><td>" + details[i].PlotSize + "</td><td>" + details[i].Amount + "</td><td>" + details[i].Installment + "</td><td>" + details[i].NextInstallmentDate + "</td><td>" + details[i].After6monthsInstallment + "</td><td>" + details[i].After6monthsDate + '</td><td><img height="250" width="300" src="' + details[i].CNICCopy + '">' + "</td><td>" + details[i].SolicitorsDetails + "</td><td>" + details[i].LenderName + "</td><td>" + details[i].Aipagreedornot + "</td><td>" + details[i].Comments + "</td></tr>";
+          } 
+
+          t += "</table>";
+
+          document.getElementById("recordslist").innerHTML = t;
+
+        }
+
+        function getDetails() {
+          fetch("http://localhost:3000/collection/Clients").then(function (
+            response
+          ) {
+            response.json().then(function (json) {
+              console.log(json);
+              localStorage.setItem("ClientsDetails", JSON.stringify(json));
+            });
+          });
+        }
+
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Authentication</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <img src="img/ebl-logo.png" alt="EBL-Logo" height="100" width="100">
+          </div>
+          <ul id="navbar" class="nav navbar-nav">
+            <li class="active"><a href="#">Logout</a></li>
+            <li><a href="recordslist.html">Records List</a></li>
+            <li><a href="add.html">Add Record</a></li>
+            <li><a href="update.html">Update Record</a></li>
+            <li><a href="search.html">Search Record</a></li>
+            <li><a href="delete.html">Delete Record</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="space"></div>
+        
+      <div class="container">
+        <h2>Add Record</h2>
+        <div class="form-horizontal">
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="name">Name:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" placeholder="Enter Name" name="Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="phone-number">Phone Number:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="phone-number" placeholder="Enter phonenumber" name="phone-number">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Email">Email:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Email" placeholder="Enter Email" name="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="date">Date:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Date" placeholder="Enter Date" name="Date">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="date">Address:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Address" placeholder="Enter Address" name="Address">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Development Name">Development Name:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Development-Name" placeholder="Enter Development Name" name="Development Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="CNIC Number">Person CNIC Number:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="CNIC-Number" placeholder="Enter CNIC Number" name="CNIC Number">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Next to kin">Next to kin:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Next-to-kin" placeholder="Enter Next to kin" name="Next to kin">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Next to kin address">Next to kin address:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Next-to-kin-address" placeholder="Enter Next to kin address" name="Next to kin address">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Plot Size">Plot Size:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Plot-Size" placeholder="Plot Size" name="Plot Size">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Amount">Amount:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Amount" placeholder="Amount" name="Amount">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Installment">Installment:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Installment" placeholder="Installment" name="Installment">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Next Installment Date">Next Installment Date:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Next-Installment-Date" placeholder="Next Installment Date" name="Next Installment Date">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="After 6 months Installment">After 6 months Installment:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="After-6-months-Installment" placeholder="After 6 months Installment" name="After 6 months Installment">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="After 6 months Date">After 6 months Date:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="After-6-months-Date" placeholder="After 6 months Date" name="After 6 months Date">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="After 6 months Date">CNIC Copy:</label></p>
+            <div class="col-sm-10">
+                <input type="file" id="CNIC" name="filename">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Solicitors Details" placeholder="Enter Solicitors Details">Solicitors Details:</label></p>
+            <div class="col-sm-10">
+                <textarea id="Solicitors-Details" name="Solicitors-Details" rows="4" cols="50"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Lender Name">Lender Name:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Lender-Name" placeholder="Lender Name" name="Lender Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Aip agreed or not">AIP agreed or not:</label></p>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Aip-agreed-or-not" placeholder="AIP agreed or not" name="AIP agreed or not">
+            </div>
+          </div>
+          <div class="form-group">
+            <p><label class="control-label col-sm-2" for="Comments" placeholder="Enter Comments">Comments:</label></p>
+            <div class="col-sm-10">
+                <textarea id="Comments" name="Comments" rows="4" cols="50"></textarea>
+            </div>
+          </div>
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default" onclick="getDetails()">Add</button>
+              <br>
+              <p id="add-result"></p>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div id="bottom"></div>
+
+      <script>
+        function getDetails() {
+          let name = document.getElementById("name").value;
+          let phone = document.getElementById("phone-number").value;
+          let Email = document.getElementById("Email").value;
+          let Date = document.getElementById("Date").value;
+          let Address = document.getElementById("Address").value;
+          let DevelopmentName = document.getElementById("Development-Name").value;
+          let CNICNumber = document.getElementById("CNIC-Number").value;
+          let Nexttokin = document.getElementById("Next-to-kin").value;
+          let Nexttokinaddress = document.getElementById("Next-to-kin-address").value;
+          let PlotSize = document.getElementById("Plot-Size").value;
+          let Amount = document.getElementById("Amount").value;
+          let Installment = document.getElementById("Installment").value;
+          let NextInstallmentDate = document.getElementById("Next-Installment-Date").value;
+          let After6monthsInstallment = document.getElementById("After-6-months-Installment").value;
+          let After6monthsDate = document.getElementById("After-6-months-Date").value;
+          let CNICCopy = document.getElementById("CNIC").value;
+          let SolicitorsDetails = document.getElementById("Solicitors-Details").value;
+          let LenderName = document.getElementById("Lender-Name").value;
+          let Aipagreedornot = document.getElementById("Aip-agreed-or-not").value;
+          let Comments = document.getElementById("Comments").value;
+
+          console.log(name);
+          console.log(phone);
+          console.log(Email);
+          console.log(Date);
+          console.log(Address);
+          console.log(DevelopmentName);
+          console.log(CNICNumber);
+          console.log(Nexttokin);
+          console.log(Nexttokinaddress);
+          console.log(PlotSize);
+          console.log(Amount);
+          console.log(Installment);
+          console.log(NextInstallmentDate);
+          console.log(After6monthsInstallment);
+          console.log(After6monthsDate);
+          console.log(CNICCopy);
+          console.log(SolicitorsDetails);
+          console.log(LenderName);
+          console.log(Aipagreedornot);
+          console.log(Comments);
+
+          let clientDetails = {
+            Name: name,
+            Phone: phone,
+            Email: Email,
+            Date: Date,
+            Address: Address,
+            DevelopmentName: DevelopmentName,
+            CNICNumber: CNICNumber,
+            Nexttokin: Nexttokin,
+            Nexttokinaddress: Nexttokinaddress,
+            PlotSize: PlotSize,
+            Amount: Amount,
+            Installment: Installment,
+            NextInstallmentDate: NextInstallmentDate,
+            After6monthsInstallment: After6monthsInstallment,
+            After6monthsDate: After6monthsDate,
+            CNICCopy: CNICCopy,
+            SolicitorsDetails: SolicitorsDetails,
+            LenderName: LenderName,
+            Aipagreedornot: Aipagreedornot,
+            Comments: Comments
+          };
+
+          console.log(clientDetails);
+
+          fetch("http://localhost:3000/collection/Clients", {
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "same-origin", // set the HTTP method as 'POST'
+            headers: {
+              "Content-Type": "application/json",
+              // set the data type as JSON
+            },
+            body: JSON.stringify(clientDetails), // need to stringify the JSON object
+          });
+
+        }
+        
+      </script>
+
+</body>
+</html>

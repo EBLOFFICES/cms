@@ -1,0 +1,88 @@
+body{
+    background-color: #120061;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+#space {
+    height: 50px;
+}
+
+#space2 {
+    height: 150px;
+}
+
+.container {
+    background-color: #494beb;
+    border: solid;
+    border-color: white;
+}
+
+.record-container {
+    background-color: #494beb;
+    border: solid;
+    border-color: white;
+    width: fit-content;
+}
+
+#image{
+    height: 50;
+    width: 50;
+}
+
+#navbar {
+    padding-left: 50px;
+}
+
+.navbar navbar-inverse {
+    width: fit-content;
+}
+
+#bottom {
+    height: 80px;
+}
+
+table {
+    background-color: darkblue;
+    border: 1px solid darkgrey;
+    color: white;
+    text-align: center;
+}
+
+th {
+    border: 3px solid lightblue;
+    text-align: center;
+}
+ 
+td {
+    border: 3px solid lightblue;
+    text-align: center;
+}
+  
+  
+table {
+    width: 100%;
+}
